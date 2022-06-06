@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  height: 4rem;
+  padding: 0.8em 1em;
+  background: black;
+  color: white;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.input {
+  flex-basis: 100%;
+  font-size: 1.2rem;
+  margin: 0em 2em;
+  outline: 0;
+  margin-right: 2em;
+}
+
+.button {
+  background-color: rgb(169, 94, 169);
+  width: 10%;
+  cursor: pointer;
+  transition: transform 160ms ease-in;
+}
+
+.button:hover {
+  transform: scale(1.2);
+}
+
+.buttonimg {
+  height: 100%;
+  padding: 0.5em 0.2em;
+}
