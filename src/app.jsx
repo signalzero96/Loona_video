@@ -12,7 +12,7 @@ function App() {
     };
 
     fetch(
-      "https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyBXXQMDVC9zgcqiNi4VD425CkcIy0ZMnk0",
+      "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=24&q=이달의소녀&order=viewCount&key=AIzaSyBXXQMDVC9zgcqiNi4VD425CkcIy0ZMnk0",
       requestOptions
     )
       .then((response) => response.json())
