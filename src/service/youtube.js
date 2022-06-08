@@ -6,30 +6,26 @@ class Youtube {
       redirect: "follow",
     };
   }
-  mostPopular() {
+  async mostPopular() {
     const requestOptions = {
       method: "GET",
       redirect: "follow",
     };
 
-    return fetch(
+    const response = await fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=24&q=이달의소녀&order=viewCount&type=video&key=${this.key}`,
       this.getRequestOptions
-    )
-      .then((response) => response.json())
-      .then((result) =>
-        result.items.map((item) => ({ ...item, id: item.id.videoId }))
-      );
+    );
+    const result_1 = await response.json();
+    return result_1.items.map((item) => ({ ...item, id: item.id.videoId }));
   }
-  search(query) {
-    return fetch(
+  async search(query) {
+    const response = await fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=24&q=${query}&order=viewCount&type=video&key=${this.key}`,
       this.getRequestOptions
-    )
-      .then((response) => response.json())
-      .then((result) =>
-        result.items.map((item) => ({ ...item, id: item.id.videoId }))
-      );
+    );
+    const result_1 = await response.json();
+    return result_1.items.map((item) => ({ ...item, id: item.id.videoId }));
   }
 }
 
