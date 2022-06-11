@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, memo } from "react";
 import styles from "./search_header.module.css";
 
-const SearchHeader = ({ onSearch }) => {
+const SearchHeader = memo(({ onSearch, onHomepage }) => {
   const inputRef = useRef();
   const handleSearch = () => {
     const value = inputRef.current.value;
@@ -15,11 +15,16 @@ const SearchHeader = ({ onSearch }) => {
       handleSearch();
     }
   };
+  const handleHomepage = () => {
+    onHomepage();
+  };
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
         <img className={styles.img} src="/images/loona-icon.ico" alt="logo" />
-        <h1 className={styles.title}>Loona</h1>
+        <button className={styles.title} onClick={handleHomepage}>
+          LOONA
+        </button>
       </div>
       <input
         ref={inputRef}
@@ -37,5 +42,5 @@ const SearchHeader = ({ onSearch }) => {
       </button>
     </header>
   );
-};
+});
 export default SearchHeader;

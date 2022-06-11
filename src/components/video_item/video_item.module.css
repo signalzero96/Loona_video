@@ -18,6 +18,7 @@
   align-items: center;
   border: 1px solid lightgray;
   box-shadow: 3px 3px 5px 0px rgba(191, 191, 191, 0.53);
+  border-radius: 0.5em;
   cursor: pointer;
   transition: transform 160ms ease-in;
 }
@@ -29,6 +30,7 @@
 .thumbnail {
   width: 40%;
   height: 100%;
+  border-radius: 0.5em;
 }
 
 .metadata {
